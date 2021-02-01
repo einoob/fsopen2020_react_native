@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
           fontWeight === 'bold' && styles.fontWeightBold,
           style,
       ];
+      
       return <NativeText style={textStyle} {...props} />;
   };
 
