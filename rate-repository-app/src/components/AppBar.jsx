@@ -11,20 +11,26 @@ const styles = StyleSheet.create({
         height: 100,
         flexDirection: 'row',
         alignItems: 'flex-end',
-        paddingBottom: 5,
-        paddingLeft: 5
+        padding: 5,
     },
     flexItem1: {
+        display: 'flex',
         textAlignVertical: 'bottom',
-        flexGrow: 0,
+        padding: 3,
+    },
+    horizontalSpace: {
+        width: 5,
     },
 });
 
 const AppBar = () => {
     return (
     <View style={styles.container}>
-        <AppBarTab title='Repositories' style={styles.flexItem1} />
-    </View>);
+        <AppBarTab style={styles.flexItem1} title='Repositories'  />
+        <View style={styles.horizontalSpace}></View>
+        <AppBarTab style={styles.flexItem1} title='Sign In' />
+    </View>
+    );
 };
 
 export default AppBar;
