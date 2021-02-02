@@ -2,6 +2,7 @@ const theme = {
     colors: {
         textPrimary: '#24292e',
         textSecondary: '#586069',
+        white: '#EFEFEF',
         primary: '#0366d6',
         appBar: '#ffa866'
     },

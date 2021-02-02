@@ -5,7 +5,7 @@ import Text from './Text';
 const AppBarTab = ({ title }) => {
     return (
     <TouchableWithoutFeedback>
-        <Text fontSize='subheading' color='textPrimary' fontWeight='bold'>
+        <Text fontSize='subheading' color='colorWhite' fontWeight='bold'>
             {title}
         </Text>
     </TouchableWithoutFeedback>
