@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
     container: {
         flexGrow: 1,
         flexShrink: 1,
+        backgroundColor: '#EAEAEA',
     },
 
     header: {
@@ -23,12 +24,10 @@ const Main = () => {
     return (
         <View style={styles.container}>
             <AppBar/>
-                <SignIn/>
-                <RepositoryList/>
             <Switch>
-                <Route path="/" exact>
+                <Route path='/' exact component={RepositoryList}>
                 </Route>
-                <Route path="/" exact>
+                <Route path='/signin' component={SignIn}>
                 </Route>
             </Switch>
         </View>

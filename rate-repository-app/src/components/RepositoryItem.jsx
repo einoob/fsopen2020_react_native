@@ -8,12 +8,13 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         alignItems: 'stretch',
-        width: 500,
+        backgroundColor: '#FFFFFF',
+        borderRadius: 5,
+        width: 400,
         paddingBottom: 5,
         paddingTop: 5
     },
     flexItemA: {
-        flexDirection: 'column',
         paddingLeft: 10,
         marginBottom: 3,
         paddingBottom: 3
@@ -21,10 +22,17 @@ const styles = StyleSheet.create({
     flexItemA1: {
         paddingBottom: 3,
     },
+    flexItemA2 : {
+        display: 'flex',
+
+        paddingBottom: 3,
+        width: 250,
+    },
     flextItemB: {
         display: 'flex',
         flexDirection: 'row',
         alignSelf: 'flex-end',
+        marginLeft: 5,
         width: 400
     },
     flexItemB1: {
@@ -40,9 +48,10 @@ const styles = StyleSheet.create({
         width: 60,
     },
     image: {
+        display: 'flex',
         width: 50,
         height: 50,
-        margin: 3,
+        margin: 5,
     },
 });
 
@@ -77,7 +86,7 @@ const Firststuff = ({props}) => {
     return (
         <Text style={styles.flexItemA}>
                 <Text fontWeight='bold' fontSize='subheading' style={styles.flexItemA1}>{props.fullName}{"\n"}</Text>
-                <Text color='textSecondary' style={styles.flexItemA1}>{props.description}{"\n"}</Text>
+                <Text color='textSecondary' style={styles.flexItemA2}>{props.description}{"\n"}</Text>
                 <Text color='white' backgroundColor='primary' borderRadius='round' styles={styles.flexItemA1}>{props.language}</Text><Text>{"\n"}</Text>
          </Text>
     );
