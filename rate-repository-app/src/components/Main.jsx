@@ -25,9 +25,9 @@ const Main = () => {
         <View style={styles.container}>
             <AppBar/>
             <Switch>
-                <Route path='/' exact component={RepositoryList}>
+                <Route path='/' exact component={SignIn}>
                 </Route>
-                <Route path='/signin' component={SignIn}>
+                <Route path='/signin' component={RepositoryList}>
                 </Route>
             </Switch>
         </View>

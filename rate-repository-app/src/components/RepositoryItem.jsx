@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
         paddingBottom: 3
     },
     flexItemA1: {
+        overflow: 'hidden',
         paddingBottom: 3,
     },
     flexItemA2 : {
