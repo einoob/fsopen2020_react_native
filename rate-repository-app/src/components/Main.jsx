@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, TouchableWithoutFeedback, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import { Route, Switch, Redirect, Link} from 'react-router-native';
 
 import AppBar from './AppBar';
@@ -25,9 +25,9 @@ const Main = () => {
         <View style={styles.container}>
             <AppBar/>
             <Switch>
-                <Route path='/' exact component={SignIn}>
+                <Route path='/repositorylist' component={RepositoryList}>
                 </Route>
-                <Route path='/signin' component={RepositoryList}>
+                <Route path='/' exact component={SignIn}>
                 </Route>
             </Switch>
         </View>

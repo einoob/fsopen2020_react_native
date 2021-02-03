@@ -20,13 +20,14 @@ const SignInForm = ({ onSubmit }) => {
     return (
         <View style={{ backgroundColor: 'white' }}>
             <FormikTextInput 
-                name='username' 
+                name='username'
                 placeholder=' Username'
             />
             <FormikTextInput
+                secureTextEntry
                 name='password' 
                 placeholder=' Password'
-                secureTextEntry
+                
             />
             <TouchableWithoutFeedback onPress={onSubmit}>
                 <View>

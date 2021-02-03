@@ -4,8 +4,8 @@ import SignInForm from './SignInForm';
 import * as yup from 'yup';
 
 const initialValues = {
-    username: '',
-    password: '',
+    username: '1',
+    password: '2',
 };
 
 const validationSchema = yup.object().shape({
@@ -24,7 +24,7 @@ const SignIn = () => {
     };
     
     return (
-            <Formik 
+            <Formik
             initialValues={initialValues} 
             onSubmit={onSubmit}
             validationSchema={validationSchema}>

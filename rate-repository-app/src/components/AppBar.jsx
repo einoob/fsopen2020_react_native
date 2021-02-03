@@ -27,9 +27,9 @@ const AppBar = () => {
     return (
     <View style={styles.container}>
         <ScrollView horizontal>
-        <AppBarTab style={styles.flexItem1} title='Repositories' link='/'/>
+        <AppBarTab style={styles.flexItem1} title='Sign in' link='/'/>
         <View style={styles.horizontalSpace}></View>
-        <AppBarTab style={styles.flexItem1} title='Sign In' link='/SignIn'/>
+        <AppBarTab style={styles.flexItem1} title='Repositories' link='/RepositoryList'/>
         </ScrollView>
     </View>
     );
