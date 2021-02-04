@@ -4,8 +4,8 @@ import SignInForm from './SignInForm';
 import * as yup from 'yup';
 
 const initialValues = {
-    username: '1',
-    password: '12',
+    username: '',
+    password: '',
 };
 
 const validationSchema = yup.object().shape({
@@ -16,11 +16,12 @@ const validationSchema = yup.object().shape({
 });
 
 const SignIn = () => {
-    const onSubmit = (values) => {
+    const onSubmit = values => {
+        console.log("values onSubmit", values);
         const username = values.username;
         const password = values.password;
-        console.log(username);
-        console.log(password);
+        console.log("use", username);
+        console.log("pas", password);
     };
     
     return (
@@ -28,7 +29,8 @@ const SignIn = () => {
             initialValues={initialValues} 
             onSubmit={onSubmit}
             validationSchema={validationSchema}>
-                {({ handleSubmit }) => <SignInForm onSubmit={handleSubmit} />}
+            {({ handleSubmit }) =>
+                <SignInForm onSubmit={handleSubmit} />}
             </Formik>
     );
 };
