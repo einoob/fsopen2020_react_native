@@ -27,7 +27,6 @@ const SignInForm = ({ onSubmit }) => {
                 secureTextEntry
                 name='password' 
                 placeholder=' Password'
-                
             />
             <TouchableWithoutFeedback onPress={onSubmit}>
                 <View>

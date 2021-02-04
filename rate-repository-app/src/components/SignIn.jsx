@@ -5,7 +5,7 @@ import * as yup from 'yup';
 
 const initialValues = {
     username: '1',
-    password: '2',
+    password: '12',
 };
 
 const validationSchema = yup.object().shape({
