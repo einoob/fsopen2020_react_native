@@ -6,13 +6,9 @@ const useSignIn = () => {
     const [mutate, result] = useMutation(AUTHORIZE_USER);
 
     const signIn = async ({ username, password }) => {
-        try {
-        mutate({ variables: { username, password } });
-        } catch (error) {
-            console.log(error);
-        }
+    const data = await mutate({ variables: { username, password } });
+        return data;
     };
-    console.log("token:", JSON.stringify(result.data));
     return [signIn, result];
 };
 

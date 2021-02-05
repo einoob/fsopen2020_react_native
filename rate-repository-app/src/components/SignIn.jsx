@@ -18,15 +18,16 @@ const validationSchema = yup.object().shape({
 
 const SignIn = () => {
     const [signIn] = useSignIn();
-    
+  
     const onSubmit = async (values) => {
-        const { username, password } = values;
-        try {
-            const { data } = await signIn({ username, password });
-            console.log(JSON.stringify(data));
-        } catch (error) {
-            console.log(JSON.stringify(error));
-        }
+      const { username, password } = values;
+  
+      try {
+        const { data } = await signIn({ username, password });
+        console.log(data.authorize.accessToken);
+      } catch (e) {
+        console.log(e);
+      }
     };
     
     return (
