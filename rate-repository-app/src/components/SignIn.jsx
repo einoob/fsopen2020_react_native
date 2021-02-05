@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik } from 'formik';
 import SignInForm from './SignInForm';
 import useSignIn from '../hooks/useSignIn';
+import { useHistory } from 'react-router-native';
 import * as yup from 'yup';
 
 const initialValues = {
@@ -18,13 +19,15 @@ const validationSchema = yup.object().shape({
 
 const SignIn = () => {
     const [signIn] = useSignIn();
+    let history = useHistory();
   
     const onSubmit = async (values) => {
       const { username, password } = values;
   
       try {
         const { data } = await signIn({ username, password });
-        console.log(data.authorize.accessToken);
+        console.log("in SignIn", data.authorize.accessToken);
+        history.push("/repositorylist");
       } catch (e) {
         console.log(e);
       }
