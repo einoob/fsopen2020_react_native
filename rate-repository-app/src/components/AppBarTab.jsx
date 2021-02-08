@@ -1,6 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
-import { Link } from 'react-router-native';
+import { TouchableWithoutFeedback } from 'react-native';
 import Text from './Text';
 
 const AppBarTab = ({ children, ...props }) => {
