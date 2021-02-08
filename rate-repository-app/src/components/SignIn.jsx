@@ -25,9 +25,9 @@ const SignIn = () => {
       const { username, password } = values;
   
       try {
-        const { data } = await signIn({ username, password });
-        console.log("in SignIn", data.authorize.accessToken);
-        history.push("/repositorylist");
+        await signIn({ username, password });
+       // console.log("in SignIn", data.authorize.accessToken);
+        history.push("/");
       } catch (e) {
         console.log(e);
       }

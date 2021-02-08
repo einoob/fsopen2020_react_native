@@ -12,10 +12,10 @@ const useSignIn = () => {
 
     const signIn = async ({ username, password }) => {
     const data = await mutate({ variables: { username, password } });
-    if (data && data.authorize) {
-        await authStorage.setAccessToken(data.authorize.accessToken);
+    if (data && data.data.authorize) {
+        console.log("in useSignIn hook if clause", data.data.authorize.accessToken);
+        await authStorage.setAccessToken(data.data.authorize.accessToken);
         apolloClient.resetStore();
-        console.log("in useSignIn hook", data.authorize.accessToken);
     }
         return data;
     };
