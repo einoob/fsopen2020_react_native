@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     flexItemB2: {
+        display: 'flex',
         alignSelf: 'flex-end',
         width: 60,
     },
@@ -66,29 +67,32 @@ const Statistics = ({props}) => {
     : props.forksCount;
 
     return (
-        <Text style={styles.flextItemB}>
-            <Text style={styles.flexItemB1}>{stars}
-                <Text style={styles.flexItemB2}>Stars</Text>
+        <View style={styles.flextItemB}>
+            <Text style={styles.flexItemB1} testID='repStars'>{stars}
+                <Text style={styles.flexItemB2}>{"\n"}Stars</Text>
             </Text>
-            <Text style={styles.flexItemB1}>{forks}
-                <Text style={styles.flexItemB2}>Forks</Text>
+            <Text style={styles.flexItemB1} testID='repForks'>{forks}
+                <Text style={styles.flexItemB2}>{"\n"}Forks</Text>
             </Text>
-            <Text style={styles.flexItemB1}>{props.reviewCount}
-                <Text style={styles.flexItemB2}>Reviews</Text>
+            <Text style={styles.flexItemB1} testID='repReviewCount'>{props.reviewCount}
+                <Text style={styles.flexItemB2}>{"\n"}Reviews</Text>
             </Text>
-            <Text style={styles.flexItemB1}>{props.ratingAverage}
-                <Text style={styles.flexItemB2}>Rating</Text>
+            <Text style={styles.flexItemB1} testID='repRatingAverage'>{props.ratingAverage}
+                <Text style={styles.flexItemB2}>{"\n"}Rating</Text>
             </Text>
-        </Text>
+        </View>
     );
 };
 
 const Firststuff = ({props}) => {
     return (
         <Text style={styles.flexItemA}>
-                <Text fontWeight='bold' fontSize='subheading' style={styles.flexItemA1}>{props.fullName}{"\n"}</Text>
-                <Text color='textSecondary' style={styles.flexItemA2}>{props.description}{"\n"}</Text>
-                <Text color='white' backgroundColor='primary' borderRadius='round' styles={styles.flexItemA1}>{props.language}</Text><Text>{"\n"}</Text>
+                <Text fontWeight='bold' fontSize='subheading' style={styles.flexItemA1}
+                    testID='repFullName' >{props.fullName}{"\n"}</Text>
+                <Text color='textSecondary' style={styles.flexItemA2}
+                    testID='repDescription'>{props.description}{"\n"}</Text>
+                <Text color='white' backgroundColor='primary' borderRadius='round' styles={styles.flexItemA1}
+                    testID='repLanguage'>{props.language}</Text><Text>{"\n"}</Text>
          </Text>
     );
 };

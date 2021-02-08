@@ -44,7 +44,7 @@ const AppBar = () => {
         }
     };
 
-    apolloClient.resetStore();
+   // apolloClient.resetStore();
     return (
     <View style={styles.container}>
         <ScrollView horizontal>
