@@ -24,6 +24,7 @@ export const GET_REPOSITORIES = gql `
               forksCount
               fullName
               id
+              url
               language
               name
               ownerAvatarUrl

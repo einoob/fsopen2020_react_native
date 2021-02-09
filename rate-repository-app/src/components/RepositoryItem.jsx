@@ -1,5 +1,6 @@
-import React from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { View, Image, StyleSheet, TouchableOpacity, Animated } from 'react-native';
+import { Link, useHistory } from 'react-router-native';
 import Text from './Text';
 
 const styles = StyleSheet.create({
@@ -55,6 +56,9 @@ const styles = StyleSheet.create({
         height: 50,
         margin: 5,
     },
+    link: {
+        width: 400,
+    },
 });
 
 const Statistics = ({props}) => {
@@ -97,14 +101,31 @@ const Firststuff = ({props}) => {
     );
 };
 
-const RepositoryItem = ({props}) => {
+const RepositoryItem = ({ props }) => {
+    
     return (
+        <TouchableOpacity activeOpacity={0.4}>
+        <Link to={{
+            pathname: '/repositoryview',
+            state: props
+        }}>
+        
         <View style={styles.container}>
             <Image style={styles.image} source={{uri: props.ownerAvatarUrl}}/>
             <Firststuff props={props}/>
             <Statistics props={props}/>
         </View>
+        </Link>
+        </TouchableOpacity>
     );
 };
 
 export default RepositoryItem;
+
+/*<Link to={{
+            pathname: '/repositoryview',
+            state: props
+        }}></Link>
+        
+    
+    };        */

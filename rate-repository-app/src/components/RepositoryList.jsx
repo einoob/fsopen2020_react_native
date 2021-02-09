@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/react-hooks';
 import React from 'react';
-import { FlatList, View, StyleSheet } from 'react-native';
+import { FlatList, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { GET_AUTHORIZATION } from '../graphql/queries';
 import useRepositories from '../hooks/useRepositories';
 import RepositoryItem from './RepositoryItem';

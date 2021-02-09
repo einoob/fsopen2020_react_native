@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import {View, StyleSheet, ScrollView} from 'react-native';
+import {View, StyleSheet, ScrollView, TouchableOpacity} from 'react-native';
 import { useHistory, Link } from 'react-router-native';
 import Constants from 'expo-constants';     
 import AppBarTab from './AppBarTab';
@@ -58,7 +58,7 @@ const AppBar = () => {
                         Sign out
                     </AppBarTab>
                 ) : (
-                    <Link to='signin' component={AppBarTab}>
+                    <Link to='/signin' component={AppBarTab}>
                         Sign in
                     </Link>
                 )

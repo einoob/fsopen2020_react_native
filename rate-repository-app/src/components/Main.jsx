@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-native';
 import AppBar from './AppBar';
 import RepositoryList from './RepositoryList';
 import SignIn from './SignIn';
+import RepositoryView from './RepositoryView';
 
 const styles = StyleSheet.create({
     container: {
@@ -25,10 +26,9 @@ const Main = () => {
         <View style={styles.container}>
             <AppBar/>
             <Switch>
-                <Route path='/signin' component={SignIn}>
-                </Route>
-                <Route path='/' exact component={RepositoryList}>
-                </Route>
+                <Route path='/signin' component={SignIn}/>
+                <Route path='/' exact component={RepositoryList}/>
+                <Route path='/repositoryview' component={RepositoryView}/>
             </Switch>
         </View>
     );
