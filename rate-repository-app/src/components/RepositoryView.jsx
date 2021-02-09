@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import { View, Linking, Platform, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { View, Linking, Platform, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
+import moment from 'moment';
 import RepositoryItem from './RepositoryItem';
+import Text from './Text';
 
-const styles = StyleSheet.create({
-    
+const styles = StyleSheet.create({  
     parent: {
         margin: 5,
     },
     container: {
         display: 'flex',
-        flexGrow: 1
+        flexDirection: 'column',
     },
     buttonBackground: {
         backgroundColor: 'white',
@@ -54,26 +55,35 @@ const LinkButton = ({url}) => {
         
 };
 
+const ReviewItem = ({ review }) => {
+    const data = review.node;
+    const date = moment(data.createdAt).format('DD.MM.YYYY');
+    return (
+        <View style={styles.container}>
+            <Text>{data.rating.toString()}</Text>
+            <Text fontWeight='bold'>{data.user.username}</Text>
+            <Text color='textSecondary'>{date}</Text>
+            <Text>{data.text}</Text>
+        </View>
+    )
+};
+
 const RepositoryView = (props) => {
     const info = props.location.state;
     console.log("info", info);
-
-    return (
-        <View style={styles.parent}>
-            <RepositoryItem props={info} />
+    console.log("reviews", info.reviews.edges);
+  return (
+        <FlatList 
+        data={info.reviews.edges}
+        renderItem={({ item }) => <ReviewItem review={item}/>}
+        keyExtractor={(item, index) => 'key'+index}
+        ListHeaderComponent={() => 
+        <View>
+            <RepositoryItem props={info}/>
             <LinkButton url={info.url}/>
-        </View>
+        </View>}
+        />
     );
 };
 
 export default RepositoryView;
-
-/*
-return (
-    <View>
-        <Text>
-            Here in repository view.
-        </Text>
-    </View>
-)
-*/
