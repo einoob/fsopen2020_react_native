@@ -4,17 +4,16 @@ import { useHistory, useParams } from 'react-router-native';
 import RepositoryItem from './RepositoryItem';
 import useRepository from '../hooks/useRepository';
 
-const SingleRepositoryView = () => {
+const SingleRepositoryView = async () => {
     let { id } = useParams();
     console.log(id);
     const { repository } = useRepository(id);
     const history = useHistory();
     console.log(repository);
-   
     if (!repository) {
         history.push("/");
     }
-    
+
     return (
         <Text>
             Here in id route
