@@ -43,8 +43,6 @@ const AppBar = () => {
             signInMethod = 'Sign in';
         }
     };
-
-   // apolloClient.resetStore();
     return (
     <View style={styles.container}>
         <ScrollView horizontal>
@@ -52,6 +50,16 @@ const AppBar = () => {
                 Repositories
             </Link>
             <View style={styles.horizontalSpace}></View>
+            { 
+                signInMethod == 'Sign out' &&
+                <Link to='/createreview' component={AppBarTab}>
+                    Create a review
+                </Link>
+            }
+            {
+                signInMethod == 'Sign out' &&
+                <View style={styles.horizontalSpace}></View>
+            }
             {
                 signInMethod == 'Sign out' ? (
                     <AppBarTab onPress={onSignOut}>

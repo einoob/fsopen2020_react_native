@@ -103,15 +103,18 @@ const Firststuff = ({props}) => {
     );
 };
 
-const RepositoryItem = ({ props }) => {
+const RepositoryItem = ({ props, linkto }) => {
     
     return (
         <TouchableOpacity activeOpacity={0.4}>
-        <Link to={{
+        <Link to={
+            linkto == 'list' ? {
+                pathname: '/repositorylist'
+            } : {
             pathname: '/repositoryview',
             state: props
-        }}>
-        
+            }
+        }>
         <View style={styles.container}>
             <Image style={styles.image} source={{uri: props.ownerAvatarUrl}}/>
             <Firststuff props={props}/>

@@ -70,12 +70,12 @@ const RepositoryView = (props) => {
         keyExtractor={(item, index) => 'key'+index}
         ListHeaderComponent={() => 
         <View style={styles.parent}>
-            <RepositoryItem props={info}/>
+            <RepositoryItem props={info} linkto='list'/>
             <LinkButton url={info.url}/>
-        </View>}
+        </View>
+        }
         />
     );
 };
 
 export default RepositoryView;
-//npm install -g npm

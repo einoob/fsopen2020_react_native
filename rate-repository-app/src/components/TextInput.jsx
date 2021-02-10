@@ -1,5 +1,5 @@
 import React from 'react';
-import {TextInput as NativeTextInput, StyleSheet} from 'react-native';
+import { TextInput as NativeTextInput, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     input: {
@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
         height: 40,
         width: 400,
         margin: 5,
+        paddingLeft: 5,
     },
     error: {
         borderWidth: 1,
