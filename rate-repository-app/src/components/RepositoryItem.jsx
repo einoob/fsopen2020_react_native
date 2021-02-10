@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Image, StyleSheet, TouchableOpacity, Animated } from 'react-native';
-import { Link, useHistory } from 'react-router-native';
+import { Link } from 'react-router-native';
 import Text from './Text';
 
 const styles = StyleSheet.create({
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         width: 400,
         paddingBottom: 5,
-        paddingTop: 5
+        paddingTop: 5,
     },
     flexItemA: {
         paddingLeft: 10,
@@ -95,8 +95,10 @@ const Firststuff = ({props}) => {
                     testID='repFullName' >{props.fullName}{"\n"}</Text>
                 <Text color='textSecondary' style={styles.flexItemA2}
                     testID='repDescription'>{props.description}{"\n"}</Text>
-                <Text color='white' backgroundColor='primary' borderRadius='round' styles={styles.flexItemA1}
-                    testID='repLanguage'>{props.language}</Text><Text>{"\n"}</Text>
+                <Text backgroundColor='primary' borderRadius='round' styles={styles.flexItemA1}
+                    testID='repLanguage'>
+                        <Text style={{ padding: 4, color: 'white' }}>{props.language}</Text>
+                </Text><Text>{"\n"}</Text>
          </Text>
     );
 };
@@ -122,10 +124,3 @@ const RepositoryItem = ({ props }) => {
 
 export default RepositoryItem;
 
-/*<Link to={{
-            pathname: '/repositoryview',
-            state: props
-        }}></Link>
-        
-    
-    };        */
