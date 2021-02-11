@@ -1,12 +1,35 @@
 import React from 'react'
-import { View, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import Text from './Text'
 import FormikTextInput from './FormikTextInput'
 
+const styles = StyleSheet.create({
+    container: {
+        display: 'flex',
+        backgroundColor: 'white',
+    },
+    button: {
+        display: 'flex',
+        backgroundColor: '#0366d6',
+        borderRadius: 3,
+        margin: 5,
+        height: 50,
+        width: 350,
+        justifyContent: 'center',
+        marginBottom: 10,
+    },
+    text: {
+        color: 'white',
+        fontSize: 16,
+        fontWeight: 'bold',
+        alignSelf: 'center',
+        margin: -5,
+    }
+});
 
 const SignUpForm = ({ onSubmit }) => {
     return (
-        <View>
+        <View style={styles.container}>
             <FormikTextInput
                 name='username'
                 placeholder=' Username'
@@ -18,14 +41,15 @@ const SignUpForm = ({ onSubmit }) => {
             />
             <FormikTextInput
                 name='passwordValidation'
-                placeholder=' Validate password'
+                placeholder=' Confirm password'
                 secureTextEntry
             />
             <TouchableOpacity
                 activeOpacity={0.5}
-                onPress={onSubmit} >
+                onPress={onSubmit}
+                style={styles.button} >
                 <View>
-                    <Text>Sign up!</Text>
+                    <Text style={styles.text}>Sign up!</Text>
                 </View>
             </TouchableOpacity>
         </View>

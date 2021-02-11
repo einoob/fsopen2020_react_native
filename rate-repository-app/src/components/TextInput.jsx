@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         borderColor: '#A0A0A0',
         borderRadius: 3,
         height: 40,
-        width: 400,
+        width: 350,
         margin: 5,
         paddingLeft: 5,
     },
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         borderColor: '#d73a4a',
         borderRadius: 3,
         height: 40,
-        width: 400,
+        width: 350,
         margin: 5,
     }
 });

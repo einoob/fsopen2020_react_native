@@ -10,11 +10,11 @@ const styles = StyleSheet.create({
     },
     button: {
         display: 'flex',
-        backgroundColor: 'blue',
+        backgroundColor: '#0366d6',
         borderRadius: 3,
         margin: 5,
         height: 50,
-        width: 400,
+        width: 350,
         justifyContent: 'center',
     },
     text: {

@@ -3,22 +3,32 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import FormikTextInput from './FormikTextInput';
 
 const styles = StyleSheet.create({
+    container: {
+        display: 'flex',
+        backgroundColor: 'white',
+    },
     button: {
-        backgroundColor: '#6ac4e6',
-        borderWidth: 1,
-        borderColor: '#A0A0A0',
+        display: 'flex',
+        backgroundColor: '#0366d6',
         borderRadius: 3,
-        height: 40,
-        width: 150,
+        height: 50,
+        width: 350,
         margin: 5,
-        textAlign: 'center',
-        textAlignVertical: 'center'
+        justifyContent: 'center',
+        marginBottom: 10,
+    },
+    text: {
+        color: 'white',
+        fontSize: 16,
+        fontWeight: 'bold',
+        alignSelf: 'center',
+        paddingLeft: -10,
     }
 });
 
 const SignInForm = ({ onSubmit }) => {
     return (
-        <View style={{ backgroundColor: 'white' }}>
+        <View style={styles.container}>
             <FormikTextInput 
                 name='username'
                 placeholder=' Username'
@@ -33,10 +43,9 @@ const SignInForm = ({ onSubmit }) => {
             <TouchableOpacity
             activeOpacity={0.5}
             onPress={onSubmit}
-            testID='submitButton'>
-                <View>
-                    <Text fontSize='subheading' style={styles.button}>Sign in</Text>
-                </View>
+            testID='submitButton'
+            style={styles.button}>
+                <Text style={styles.text}>Sign in</Text>
             </TouchableOpacity>
         </View>
     );
