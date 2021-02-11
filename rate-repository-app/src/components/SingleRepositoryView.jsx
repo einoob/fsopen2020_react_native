@@ -6,19 +6,15 @@ import useRepository from '../hooks/useRepository';
 
 const SingleRepositoryView = () => {
     let { id } = useParams();
-    console.log(id);
     const { repository } = useRepository(id);
-    const history = useHistory();
-    console.log(repository);
+
     if (repository == undefined) {
-        console.log("repository untrue");
         return null;
     }
-    console.log("repository true");
+
     return (
-        <RepositoryView props={repository} />
+        <RepositoryView props={repository} origin='review' />
     );
 }
 
 export default SingleRepositoryView;
-// <RepositoryItem props={repository.repository}/>
