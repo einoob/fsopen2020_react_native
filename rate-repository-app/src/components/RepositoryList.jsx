@@ -1,9 +1,10 @@
 import { useQuery } from '@apollo/react-hooks';
-import React from 'react';
+import React, { useState } from 'react';
 import { FlatList, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { GET_AUTHORIZATION } from '../graphql/queries';
 import useRepositories from '../hooks/useRepositories';
 import RepositoryItem from './RepositoryItem';
+import SortingPicker from './SortingPicker';
 
 const styles = StyleSheet.create({
   separator: {
@@ -29,6 +30,7 @@ export const RepositoryListContainer = ({ repositories }) => {
       data={repositoryNodes}
       ItemSeparatorComponent={ItemSeparator}
       keyExtractor={item => item.id}
+      ListHeaderComponent={<SortingPicker/>}
       renderItem={({ item }) => (
           <RepositoryItem props={item}/>
       )}   
@@ -38,7 +40,7 @@ export const RepositoryListContainer = ({ repositories }) => {
 };
 
 const RepositoryList = () => {
-
+  const [sortOrder, setSortOrder] = useState();
   const { repositories } = useRepositories();
 
   return (
