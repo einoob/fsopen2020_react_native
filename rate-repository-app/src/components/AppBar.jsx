@@ -71,6 +71,14 @@ const AppBar = () => {
                     </Link>
                 )
             }
+            <View style={styles.horizontalSpace}></View>
+            {
+                signInMethod == 'Sign in' &&
+                <Link to='/signup' component={AppBarTab}>
+                    Sign up
+                </Link>
+                
+            }
         </ScrollView>
     </View>
     );

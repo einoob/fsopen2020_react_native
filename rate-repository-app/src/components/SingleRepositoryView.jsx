@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { useHistory, useParams } from 'react-router-native';
+import { useParams } from 'react-router-native';
 import RepositoryView from './RepositoryView';
 import useRepository from '../hooks/useRepository';
 

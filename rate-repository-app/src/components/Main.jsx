@@ -5,6 +5,7 @@ import { Route, Switch, NativeRouter as Router } from 'react-router-native';
 import AppBar from './AppBar';
 import RepositoryList from './RepositoryList';
 import SignIn from './SignIn';
+import SignUp from './SignUp';
 import RepositoryView from './RepositoryView';
 import CreateReview from './CreateReview';
 import SingleRepositoryView from './SingleRepositoryView'
@@ -31,6 +32,7 @@ const Main = () => {
             <Switch>
                 <Route path='/' exact component={RepositoryList}/>
                 <Route path='/signin' component={SignIn}/>
+                <Route path='/signup' component={SignUp} />
                 <Route path='/repositorylist' component={RepositoryList}/>
                 <Route path='/repositoryview' component={RepositoryView}/>
                 <Route path='/createreview' component={CreateReview}/>

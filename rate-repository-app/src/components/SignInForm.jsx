@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import FormikTextInput from './FormikTextInput';
 
 const styles = StyleSheet.create({
@@ -30,13 +30,14 @@ const SignInForm = ({ onSubmit }) => {
                 placeholder=' Password'
                 testID='password'
             />
-            <TouchableWithoutFeedback
+            <TouchableOpacity
+            activeOpacity={0.5}
             onPress={onSubmit}
             testID='submitButton'>
                 <View>
                     <Text fontSize='subheading' style={styles.button}>Sign in</Text>
                 </View>
-            </TouchableWithoutFeedback>
+            </TouchableOpacity>
         </View>
     );
 };
