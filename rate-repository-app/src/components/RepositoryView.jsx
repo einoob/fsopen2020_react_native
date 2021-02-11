@@ -60,7 +60,7 @@ const LinkButton = ({url}) => {
 
 
 const RepositoryView = (props) => {
-    const info = props.location.state;
+    const info = props.location.state ? props.location.state : props;
     console.log("info", info);
     console.log("reviews", info.reviews.edges);
   return (

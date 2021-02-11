@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import { Route, Switch } from 'react-router-native';
+import { Route, Switch, NativeRouter as Router } from 'react-router-native';
 
 import AppBar from './AppBar';
 import RepositoryList from './RepositoryList';
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
 const Main = () => {
     return (
         <View style={styles.container}>
+            <Router>
             <AppBar/>
             <Switch>
                 <Route path='/' exact component={RepositoryList}/>
@@ -33,8 +34,11 @@ const Main = () => {
                 <Route path='/repositorylist' component={RepositoryList}/>
                 <Route path='/repositoryview' component={RepositoryView}/>
                 <Route path='/createreview' component={CreateReview}/>
-                <Route path='/:id' component={SingleRepositoryView}/>
+                <Route path='/:id'>
+                    <SingleRepositoryView/>
+                </Route>
             </Switch>
+            </Router>
         </View>
     );
 };

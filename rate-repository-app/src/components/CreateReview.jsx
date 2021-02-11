@@ -40,32 +40,19 @@ export const ReviewContainer = ({ onSubmit }) => {
 const CreateReview = () => {
 
     const [createReview, result] = useCreateReview();
-    const history = useHistory();
-    let redirect = null;
+    let history = useHistory();
     console.log(result);
-    const onSubmit = async (values) => {
-        const { 
-            ownerName,
-            repositoryName,
-            rating,
-            text } = values;
+
+    const onSubmit = (values) => {
+        const { ownerName, repositoryName, rating, text } = values;
         
-        try {
-           const { data } = await createReview({ ownerName, repositoryName, rating: Number(rating), text});
-           if (data) {
-               redirect = data.createReview.repositoryId;
-           }
-        } catch (error) {
-            console.log("Create review error:", error);
-        }
-
-        if (redirect != null) {
-            console.log("we send this", redirect);
-            history.push(redirect);
-        }
-
+        createReview({ ownerName, repositoryName, rating: Number(rating), text});
     };
 
+    if (result.data) {
+        console.log("we send this", result.data.createReview.repositoryId);
+        history.push(result.data.createReview.repositoryId);
+    } 
     return (
         <ReviewContainer onSubmit={onSubmit}/>
     );
