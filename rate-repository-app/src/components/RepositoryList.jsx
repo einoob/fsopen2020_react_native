@@ -30,7 +30,7 @@ export const RepositoryListContainer = ({ repositories, setSortOrder }) => {
       data={repositoryNodes}
       ItemSeparatorComponent={ItemSeparator}
       keyExtractor={item => item.id}
-      ListHeaderComponent={<SortingPicker setSortOrder={setSortOrder}/>}
+    //  ListHeaderComponent={<SortingPicker setSortOrder={setSortOrder}/>}
       renderItem={({ item }) => (
           <RepositoryItem props={item}/>
       )}   
