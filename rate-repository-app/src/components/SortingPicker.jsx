@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
     container: {
         display: 'flex',
         width: 400,
-        height: 30,
         marginBottom: 10,
     },
     picker: {
@@ -14,19 +13,19 @@ const styles = StyleSheet.create({
     }
 });
 
-const SortingPicker = () => {
+const SortingPicker = ({ setSortOrder }) => {
 
-    const [value, setValue] = useState();
     return (
         <View style={styles.container}>
         <RNPickerSelect
-        style={styles.picker} 
-        onValueChange={(value) => setValue(value)}
+        placeholder={{ label: "Sort repositories by...",  value: ''}}
+        style={StyleSheet.flatten(styles.picker)} 
+        onValueChange={(value) => setSortOrder(value)}
         items={
             [
-                {label: "Latest repositories", value: "CREATED AT"},
-                {label: "Highest rated repositories", value: "RATING AVERAGE"},
-                {label: "Lowest rated repositories", value: "RATING AVERAGE"}
+                {label: "Latest repositories", value: "CREATED_AT"},
+                {label: "Highest rated repositories", value: "RATING_AVERAGE_DESC"},
+                {label: "Lowest rated repositories", value: "RATING_AVERAGE_ASC"}
             ]
         }
         />

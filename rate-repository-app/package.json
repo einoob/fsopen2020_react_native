@@ -25,7 +25,6 @@
     "@apollo/react-hooks": "^4.0.0",
     "@react-native-community/async-storage": "~1.11.0",
     "@react-native-community/picker": "1.6.0",
-    "@react-native-picker/picker": "^1.9.10",
     "apollo-boost": "^0.4.9",
     "dotenv": "^8.2.0",
     "expo": "^38.0.0",
