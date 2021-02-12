@@ -42,7 +42,12 @@ const ReviewForm = ({ onSubmit }) => {
             <FormikTextInput 
             name='text'
             placeholder=' Review text'/>
-            <TouchableOpacity onPress={onSubmit} style={styles.button} activeOpacity={0.5}>
+            <TouchableOpacity 
+            onPress={onSubmit} 
+            style={styles.button} 
+            activeOpacity={0.5} 
+            delayPressIn={0}
+            delayPressOut={100}>
                 <Text style={styles.text}>
                     Submit review
                 </Text>

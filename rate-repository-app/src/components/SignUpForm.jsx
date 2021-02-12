@@ -46,6 +46,8 @@ const SignUpForm = ({ onSubmit }) => {
             />
             <TouchableOpacity
                 activeOpacity={0.5}
+                delayPressIn={0}
+                delayPressOut={100}
                 onPress={onSubmit}
                 style={styles.button} >
                 <View>

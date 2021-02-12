@@ -3,19 +3,21 @@ import { useQuery } from '@apollo/react-hooks';
 
 import { GET_REPOSITORIES } from '../graphql/queries';
 
-const useRepositories = (sortOrder) => {
-  let quereyVariable;
+const useRepositories = (sortOrder, filter) => {
+  let queryVariable;
   const [repositories, setRepositories] = useState();
   if (sortOrder === '' || sortOrder === 'CREATED_AT')
   {
-    quereyVariable = { orderBy: "CREATED_AT", orderDirection: "DESC" };
+    queryVariable = { orderBy: "CREATED_AT", orderDirection: "DESC", searchKeyword: filter };
   }
   else {
-    quereyVariable = sortOrder === "RATING_AVERAGE_ASC" 
-    ? { orderBy: "RATING_AVERAGE", orderDirection: "ASC"} : { orderBy: "RATING_AVERAGE", orderDirection: "DESC"};
+    queryVariable = sortOrder === "RATING_AVERAGE_ASC" 
+    ? { orderBy: "RATING_AVERAGE", orderDirection: "ASC", searchKeyword: filter}
+    : { orderBy: "RATING_AVERAGE", orderDirection: "DESC", searchKeyword: filter};
   }
+  console.log("queryVariable", queryVariable);
   const { error, loading } = useQuery(GET_REPOSITORIES ,{
-      variables: quereyVariable,
+      variables: queryVariable,
       fetchPolicy: 'cache-and-network',
       onCompleted: (data) => {
           setRepositories(data.repositories);

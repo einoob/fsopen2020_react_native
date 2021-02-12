@@ -42,6 +42,8 @@ const SignInForm = ({ onSubmit }) => {
             />
             <TouchableOpacity
             activeOpacity={0.5}
+            delayPressIn={0}
+            delayPressOut={100}
             onPress={onSubmit}
             testID='submitButton'
             style={styles.button}>

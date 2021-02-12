@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     container: {
         display: 'flex',
         width: 400,
-        marginBottom: 10,
+        marginBottom: 5,
     },
     picker: {
         backgroundColor: 'black',

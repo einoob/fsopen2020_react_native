@@ -47,7 +47,7 @@ const LinkButton = ({url}) => {
     
     return (
             <View style={styles.buttonBackground}>
-                <TouchableOpacity onPress={handlePress}>
+                <TouchableOpacity onPress={handlePress} delayPressIn={0} delayPressOut={100}>
                 <Text style={styles.button}>
                     Open in GitHub
                 </Text>

@@ -106,7 +106,8 @@ const Firststuff = ({props}) => {
 const RepositoryItem = ({ props, linkto }) => {
     
     return (
-        <TouchableOpacity activeOpacity={0.4}
+        <View>
+        <TouchableOpacity activeOpacity={0.4} delayPressIn={0}
         style={{width: 350}}>
         <Link to={
             linkto == 'list' ? {
@@ -124,6 +125,7 @@ const RepositoryItem = ({ props, linkto }) => {
         </View>
         </Link>
         </TouchableOpacity>
+        </View>
     );
 };
 

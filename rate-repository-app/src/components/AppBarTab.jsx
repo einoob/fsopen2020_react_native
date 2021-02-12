@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
 const AppBarTab = ({ children, ...props }) => {
 
     return (
-    <TouchableOpacity {...props}>
+    <TouchableOpacity {...props} delayPressIn={0} delayPressOut={100}>
         <Text fontSize='subheading' fontWeight='bold' style={styles.tab}>
             {children}
         </Text>
